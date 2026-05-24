@@ -5,6 +5,7 @@ import { HowItWorks } from "./HowItWorks";
 import { GoogleDashboard } from "./GoogleDashboard";
 import { LinkedIn } from "./LinkedIn";
 import { BusinessCard } from "./BusinessCard";
+import { FideliteVideo } from "./FideliteVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -24,6 +25,14 @@ export const RemotionRoot: React.FC = () => {
           logoColor2: "#86A8E7",
         }}
       />
+      <Composition
+  id="FideliteVideo"
+  component={FideliteVideo}
+  durationInFrames={510}
+  fps={30}
+  width={1920}
+  height={1080}
+/>
       <Composition
   id="BusinessCard"
   component={BusinessCard}
