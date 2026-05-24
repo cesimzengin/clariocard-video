@@ -30,7 +30,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
   id="SnapchatVideo"
   component={SnapchatVideo}
-  durationInFrames={420}
+  durationInFrames={510}
   fps={30}
   width={1920}
   height={1080}
@@ -38,7 +38,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
   id="InstagramVideo"
   component={InstagramVideo}
-  durationInFrames={420}
+  durationInFrames={510}
   fps={30}
   width={1920}
   height={1080}
@@ -46,7 +46,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
   id="FideliteVideo"
   component={FideliteVideo}
-  durationInFrames={510}
+  durationInFrames={600}
   fps={30}
   width={1920}
   height={1080}
@@ -54,7 +54,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
   id="BusinessCard"
   component={BusinessCard}
-  durationInFrames={250}
+  durationInFrames={540}
   fps={30}
   width={1920}
   height={1080}
@@ -75,7 +75,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="HowItWorks"
         component={HowItWorks}
-        durationInFrames={150}
+        durationInFrames={200}
         fps={30}
         width={1920}
         height={1080}
@@ -83,7 +83,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
   id="LinkedIn"
   component={LinkedIn}
-  durationInFrames={250}
+  durationInFrames={540}
   fps={30}
   width={1920}
   height={1080}
@@ -91,7 +91,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
   id="GoogleDashboard"
   component={GoogleDashboard}
-  durationInFrames={250}
+  durationInFrames={420}
   fps={30}
   width={1920}
   height={1080}
