@@ -6,6 +6,8 @@ import { GoogleDashboard } from "./GoogleDashboard";
 import { LinkedIn } from "./LinkedIn";
 import { BusinessCard } from "./BusinessCard";
 import { FideliteVideo } from "./FideliteVideo";
+import { InstagramVideo } from "./InstagramVideo";
+import { SnapchatVideo } from "./SnapchatVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -25,6 +27,22 @@ export const RemotionRoot: React.FC = () => {
           logoColor2: "#86A8E7",
         }}
       />
+      <Composition
+  id="SnapchatVideo"
+  component={SnapchatVideo}
+  durationInFrames={420}
+  fps={30}
+  width={1920}
+  height={1080}
+/>
+      <Composition
+  id="InstagramVideo"
+  component={InstagramVideo}
+  durationInFrames={420}
+  fps={30}
+  width={1920}
+  height={1080}
+/>
       <Composition
   id="FideliteVideo"
   component={FideliteVideo}
