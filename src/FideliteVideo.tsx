@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, interpolate, Series } from "remotion";
+import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 
 const fadeIn = (frame: number, start: number, duration = 20) =>
   interpolate(frame, [start, start + duration], [0, 1], { extrapolateRight: "clamp" });
@@ -19,7 +19,10 @@ export const FideliteVideo: React.FC = () => {
           <div style={{ opacity: fadeIn(frame, 0), transform: `translateY(${slideUp(frame, 0)}px)`, textAlign: "center" }}>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 22, letterSpacing: 6, textTransform: "uppercase", margin: "0 0 16px" }}>ClarioCard</p>
             <h1 style={{ fontSize: 72, fontWeight: 700, margin: "0 0 16px" }}>Carte de fidélité</h1>
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 28, margin: 0 }}>Créez et gérez votre programme en 2 minutes</p>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 28, margin: "0 0 20px" }}>Programme 100% digital — aucune carte physique</p>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 12, padding: "10px 24px", display: "inline-block" }}>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 18, margin: 0 }}>Carte à points ou à tampons</p>
+            </div>
           </div>
         </AbsoluteFill>
       )}
@@ -30,22 +33,20 @@ export const FideliteVideo: React.FC = () => {
 
           <div style={{ opacity: fadeIn(frame, 60), transform: `translateY(${slideUp(frame, 60)}px)`, marginBottom: 40, textAlign: "center" }}>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, letterSpacing: 4, textTransform: "uppercase", margin: "0 0 12px" }}>Étape 1 — Configuration</p>
-            <h2 style={{ fontSize: 48, fontWeight: 700, margin: 0 }}>Le commerçant crée son programme</h2>
+            <h2 style={{ fontSize: 48, fontWeight: 700, margin: 0 }}>Le commerçant crée son programme digital</h2>
           </div>
 
           <div style={{ display: "flex", gap: 30, width: "100%" }}>
-            {/* Formulaire setup */}
             <div style={{
               flex: 1, background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 24, padding: "40px",
               opacity: fadeIn(frame, 70), transform: `translateY(${slideUp(frame, 70)}px)`
             }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, margin: "0 0 24px", textTransform: "uppercase", letterSpacing: 2 }}>Mon programme</p>
-
               {[
                 { label: "Nom du commerce", value: "Pizzeria Bella Roma" },
-                { label: "Points par visite", value: "10 points" },
-                { label: "Récompense", value: "Pizza offerte à 100 pts" },
-                { label: "Couleur", value: "Rouge #E63946" },
+                { label: "Type de programme", value: "Tampons (9 = 1 offert)" },
+                { label: "Récompense", value: "Pizza offerte" },
+                { label: "Couleur de la carte", value: "Rouge #E63946" },
               ].map((field, i) => {
                 const d = 80 + i * 15;
                 return (
@@ -57,7 +58,6 @@ export const FideliteVideo: React.FC = () => {
                   </div>
                 );
               })}
-
               <div style={{ opacity: fadeIn(frame, 140), background: "white", borderRadius: 12, padding: "14px", textAlign: "center", color: "#000", fontWeight: 700, fontSize: 18, marginTop: 8 }}>
                 Créer mon programme
               </div>
@@ -115,7 +115,8 @@ export const FideliteVideo: React.FC = () => {
 
           <div style={{ opacity: fadeIn(frame, 180), transform: `translateY(${slideUp(frame, 180)}px)`, marginBottom: 40, textAlign: "center" }}>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, letterSpacing: 4, textTransform: "uppercase", margin: "0 0 12px" }}>Étape 2 — Utilisation</p>
-            <h2 style={{ fontSize: 48, fontWeight: 700, margin: 0 }}>Le client scanne et cumule des points</h2>
+            <h2 style={{ fontSize: 48, fontWeight: 700, margin: "0 0 12px" }}>Le client présente sa carte digitale</h2>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 20, margin: 0 }}>Aucune carte physique — tout sur son téléphone</p>
           </div>
 
           <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
@@ -124,10 +125,11 @@ export const FideliteVideo: React.FC = () => {
             <div style={{ opacity: fadeIn(frame, 190), transform: `translateY(${slideUp(frame, 190)}px)`, textAlign: "center" }}>
               <div style={{ background: "#111", border: "3px solid rgba(255,255,255,0.15)", borderRadius: 40, padding: "20px", width: 260, margin: "0 auto 16px" }}>
                 <div style={{ background: "#1a1a1a", borderRadius: 28, padding: "24px 20px" }}>
-                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, margin: "0 0 16px", textTransform: "uppercase", letterSpacing: 2 }}>Ma carte fidélité</p>
-                  <div style={{ background: "linear-gradient(135deg, #E63946, #c1121f)", borderRadius: 16, padding: "24px 20px", marginBottom: 16 }}>
+                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 2 }}>Ma carte fidélité</p>
+                  <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 10, margin: "0 0 12px" }}>100% digital</p>
+                  <div style={{ background: "linear-gradient(135deg, #E63946, #c1121f)", borderRadius: 16, padding: "20px", marginBottom: 16 }}>
                     <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 13, margin: "0 0 6px" }}>Pizzeria Bella Roma</p>
-                    <p style={{ color: "white", fontSize: 52, fontWeight: 800, margin: "0 0 4px" }}>
+                    <p style={{ color: "white", fontSize: 48, fontWeight: 800, margin: "0 0 4px" }}>
                       {Math.floor(interpolate(frame, [220, 280], [30, 40], { extrapolateRight: "clamp" }))}
                     </p>
                     <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 13, margin: 0 }}>points</p>
@@ -138,7 +140,7 @@ export const FideliteVideo: React.FC = () => {
                   <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, margin: 0 }}>Montrez ce QR au commerçant</p>
                 </div>
               </div>
-              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 16 }}>Carte du client</p>
+              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 16 }}>Carte digitale du client</p>
             </div>
 
             {/* Flèche */}
@@ -147,10 +149,10 @@ export const FideliteVideo: React.FC = () => {
             {/* Scanner commerçant */}
             <div style={{ opacity: fadeIn(frame, 250), transform: `translateY(${slideUp(frame, 250)}px)`, textAlign: "center" }}>
               <div style={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 24, padding: "40px", width: 280 }}>
-                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, margin: "0 0 20px", textTransform: "uppercase", letterSpacing: 2 }}>Scanner commerçant</p>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, margin: "0 0 20px", textTransform: "uppercase", letterSpacing: 2 }}>Commerçant</p>
                 <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 16, padding: "20px", marginBottom: 20, textAlign: "center" }}>
                   <p style={{ fontSize: 48, margin: "0 0 8px" }}>📷</p>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, margin: 0 }}>Scanner le QR code</p>
+                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, margin: 0 }}>Scanne le QR code du client</p>
                 </div>
                 <div style={{
                   opacity: fadeIn(frame, 280),
@@ -160,7 +162,7 @@ export const FideliteVideo: React.FC = () => {
                   <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, margin: 0 }}>Visite validée !</p>
                 </div>
               </div>
-              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 16, marginTop: 16 }}>Borne du commerçant</p>
+              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 16, marginTop: 16 }}>Scanner du commerçant</p>
             </div>
 
           </div>
@@ -193,7 +195,6 @@ export const FideliteVideo: React.FC = () => {
             ))}
           </div>
 
-          {/* Table clients */}
           <div style={{ background: "#111", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", width: "100%", opacity: fadeIn(frame, 390) }}>
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", padding: "12px 20px", background: "rgba(255,255,255,0.03)", fontSize: 11, color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: 2 }}>
               <span>Client</span><span>Points</span><span>Visites</span><span>Statut</span>
@@ -220,7 +221,7 @@ export const FideliteVideo: React.FC = () => {
           <div style={{ opacity: fadeIn(frame, 450), transform: `translateY(${slideUp(frame, 450)}px)`, textAlign: "center" }}>
             <p style={{ fontSize: 72, margin: "0 0 24px" }}>🎫</p>
             <h1 style={{ fontSize: 64, fontWeight: 700, margin: "0 0 16px" }}>◈ ClarioCard</h1>
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 28, margin: "0 0 40px" }}>Carte de fidélité NFC intelligente</p>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 28, margin: "0 0 40px" }}>Programme de fidélité 100% digital</p>
             <div style={{ background: "white", borderRadius: 16, padding: "18px 48px", display: "inline-block" }}>
               <p style={{ color: "#000", fontSize: 22, fontWeight: 700, margin: 0 }}>app.clariocard.com</p>
             </div>
